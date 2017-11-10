@@ -42,7 +42,7 @@ if(empty($files)){
 else{
     $table = "<table class = 'table'><thead><tr><th>Download</th><th>Rename</th><th>Delete</th></thead>";
     foreach($files as $file){
-        $table .= "<tr><td><a href = '".$file->getPath()."' download>".$file->getName()."</a></td><td><form action = '' method = 'POST'><input type = 'hidden' name = 'old_file_name' value = '{$file->getName()}'><input placeholder = '{$file->getName()}'name = 'new_file_name' type = 'text'> <button name = 'rename' type = 'submit'>Rename</button></form></td><td><form action = '' method = 'POST'><input type = 'hidden' name = 'file_name' value = '".$file->getName()."'><button name = 'delete' type = 'submit'>Delete</button></form></td></tr>";
+        $table .= "<tr><td><a href = '".$file->getPath()."' download>".$file->getName()."</a> (filesize: {$file->getSize()})</td><td><form action = '' method = 'POST'><input type = 'hidden' name = 'old_file_name' value = '{$file->getName()}'><input placeholder = '{$file->getName()}'name = 'new_file_name' type = 'text'> <button name = 'rename' type = 'submit'>Rename</button></form></td><td><form action = '' method = 'POST'><input type = 'hidden' name = 'file_name' value = '".$file->getName()."'><button name = 'delete' type = 'submit'>Delete</button></form></td></tr>";
        
     }
     $table .= " <tbody></table>";    

@@ -1,8 +1,5 @@
 <?php
 session_start();
-function accountRedirect(){
-    header("Location: account.php");
-}
 if(!isset($_SESSION["id"])){
     $basename = basename($_SERVER['PHP_SELF']);
     if($basename != "index.php"){
